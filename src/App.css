@@ -32,11 +32,9 @@ header {
   box-sizing: border-box;
 }
 
-
 input[type="checkbox"] {
   margin-right: 10px;
 }
-
 .task form, input[type="text"] {
   width: 100%;
   background-color: #282c34;

@@ -1,23 +1,23 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
-export default function AddTask({addTask = f=>f}) {
+export default function AddTask({ addTask = f=>f }) {
   const [newTask, setNewTask] = useState('')
 
   const handleSubmit = e => {
     e.preventDefault()
-    addTask({type: 'ADD', title: newTask})
+    addTask({ type: 'ADD', title: newTask })
     setNewTask('')
   }
 
   return (
     <div className='task add'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={ handleSubmit }>
         <input 
           type="text" 
           name="Add new task" 
-          value={newTask} 
+          value={ newTask } 
           placeholder="Add new task"
-          onChange={e => setNewTask(e.target.value)}
+          onChange={ e => setNewTask(e.target.value) }
         />
       </form>
     </div>

@@ -1,4 +1,4 @@
-import {useReducer} from 'react'
+import { useReducer } from 'react'
 import './App.css';
 import Task from './components/Task'
 import AddTask from './components/AddTask'
@@ -20,21 +20,20 @@ const tasks = [
 
 function App() {
   const [tasksState, dispatch] = useReducer(reducer, tasks)
-
   return (
     <div className="App">
       <header>
         To-do app
       </header>
       <main>
-        {tasksState.map((task, i) => (
+        {tasksState.map((task, index) => (
           <Task 
-            data={{index: i, ...task}} 
-            key={i}
-            dispatch={dispatch}
+            key={ index }
+            data={ { index: index, ...task } } 
+            dispatch={ dispatch }
           />
         ))}
-        <AddTask addTask={dispatch}/>
+        <AddTask addTask={ dispatch }/>
       </main>
     </div>
   );
@@ -44,7 +43,6 @@ function App() {
 function reducer(state, action) {
   switch (action.type) {
     case 'ADD':
-      // payload is the title of new task
       return [
         ...state, 
         {
