@@ -10,7 +10,7 @@ export default function AddTask({ addTask = f=>f }) {
   }
 
   return (
-    <div className='task add'>
+    <div className="task add">
       <form onSubmit={ handleSubmit }>
         <input 
           type="text" 

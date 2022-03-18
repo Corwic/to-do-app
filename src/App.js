@@ -1,5 +1,5 @@
 import { useReducer } from 'react'
-import './App.css';
+import './App.css'
 import Task from './components/Task'
 import AddTask from './components/AddTask'
 
@@ -18,7 +18,7 @@ const tasks = [
   },
 ]
 
-function App() {
+export default function App() {
   const [tasksState, dispatch] = useReducer(reducer, tasks)
   return (
     <div className="App">
@@ -40,7 +40,7 @@ function App() {
 }
 
 
-function reducer(state, action) {
+export function reducer(state, action) {
   switch (action.type) {
     case 'ADD':
       return [
@@ -67,5 +67,3 @@ function reducer(state, action) {
       return state;
   }
 }
-
-export default App;
