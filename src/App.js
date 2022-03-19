@@ -29,7 +29,7 @@ export default function App() {
         {tasksState.map((task, index) => (
           <Task 
             key={ index }
-            data={ { index: index, ...task } } 
+            data={ { index, ...task } } 
             dispatch={ dispatch }
           />
         ))}
